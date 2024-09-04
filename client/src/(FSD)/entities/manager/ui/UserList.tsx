@@ -108,16 +108,6 @@ const UserList = () => {
                         ))}
                     </tbody>
                 </table>
-                <div className={styles.buttonContainer}>
-                    <LinkBtnShared
-                        href="/brand"
-                        variant="solid"
-                        color="primary"
-                        className={styles.sellerManagementButton}
-                    >
-                        판매사 관리
-                    </LinkBtnShared>
-                </div>
             </div>
             {selectedUser && <PointModal isOpen={pointModalIsOpen} onOpenChange={pointModalOnOpenChange} user={selectedUser} />}
         </>
