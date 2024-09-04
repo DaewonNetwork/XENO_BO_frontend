@@ -13,15 +13,11 @@ const AppHeader = () => {
             <AppContainer>
                 <AppInner>
                     <div className={styles.inner}>
-                        <div className={styles.header_left}>
-                            <Button variant={"light"} size={"sm"} isIconOnly endContent={<IconShared iconSize={"md"} iconType={"menu"} />} />
-                        </div>
+                        <div></div>
                         <div className={styles.header_logo}>
                             <LogoShared />
                         </div>
-                        <div className={styles.header_right}>
-                            <LinkBtnShared href={"/search"} size={"sm"} isIconOnly endContent={<IconShared iconSize={"md"} iconType={"search"} />} />
-                        </div>
+                        <div></div>
                     </div>
                 </AppInner>
             </AppContainer>

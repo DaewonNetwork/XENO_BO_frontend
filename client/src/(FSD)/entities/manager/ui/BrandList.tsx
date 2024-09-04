@@ -130,16 +130,6 @@ const BrandList = () => {
                     ))}
                 </tbody>
             </table>
-            <div className={styles.buttonContainer}>
-                <LinkBtnShared 
-                    href="/brand/products" 
-                    variant="solid" 
-                    color="primary"
-                    className={styles.sellerManagementButton}
-                >
-                    물건 리스트
-                </LinkBtnShared>
-            </div>
         </div>
     );
 };

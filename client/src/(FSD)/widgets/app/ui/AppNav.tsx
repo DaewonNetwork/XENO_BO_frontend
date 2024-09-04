@@ -20,30 +20,22 @@ const AppNav = () => {
             <AppContainer>
                 <AppInner>
                     <div className={styles.inner}>
-                        <LinkBtnShared href={"/menu"} data-hover={false} disableAnimation>
-                            <IconShared iconType={"menu"} />
-                            <TextXSmallShared> 카테고리</TextXSmallShared>
-                        </LinkBtnShared>
-                        <LinkBtnShared href={"/reviews"} data-hover={false} disableAnimation>
-                            <IconShared iconType={"review"} />
-                            <TextXSmallShared>리뷰</TextXSmallShared>
+                        <LinkBtnShared href={"/brand/products"} data-hover={false} disableAnimation>
+                            <IconShared iconType={"cart"} />
+                            <TextXSmallShared>상품 리스트</TextXSmallShared>
                         </LinkBtnShared>
                         <LinkBtnShared href={"/"} data-hover={false} disableAnimation>
+                            <IconShared iconType={"person"} />
+                            <TextXSmallShared>유저 관리</TextXSmallShared>
+                        </LinkBtnShared>
+                        <LinkBtnShared href={"/brand"} data-hover={false} disableAnimation>
                             <IconShared iconType={"home"} />
-                            <TextXSmallShared>홈</TextXSmallShared>
+                            <TextXSmallShared>판매사 관리</TextXSmallShared>
                         </LinkBtnShared>
-                        <LinkBtnShared href={"/wishlist"} data-hover={false} disableAnimation>
-                            <IconShared iconType={"like"} />
-                            <TextXSmallShared>좋아요</TextXSmallShared>
+                        <LinkBtnShared href={"/brand/approve"} data-hover={false} disableAnimation>
+                            <IconShared iconType={"plus"} />
+                            <TextXSmallShared>판매사 승인</TextXSmallShared>
                         </LinkBtnShared>
-                        {accessToken ? (<LinkBtnShared href={"/seller"} data-hover={false} disableAnimation>
-                            <IconShared iconType={"person"} />
-                            <TextXSmallShared>마이</TextXSmallShared>
-                        </LinkBtnShared>) : (<LinkBtnShared href={"/auth/signin"} data-hover={false} disableAnimation>
-                            <IconShared iconType={"person"} />
-                            <TextXSmallShared>로그인</TextXSmallShared>
-                        </LinkBtnShared>)}
-
                     </div>
                 </AppInner>
             </AppContainer>
