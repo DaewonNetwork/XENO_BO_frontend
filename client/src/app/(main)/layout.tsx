@@ -14,7 +14,7 @@ const Layout = ({ children, }: { children: React.ReactNode }) => {
     return (
         <>
             <AppFixedTopBar>
-                <AppTitleHeader title={"유저 관리"} />
+                <AppTitleHeader title={"로그인"} />
             </AppFixedTopBar>
             {children}
             <AppFixedBtmBar>
