@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { ALL_USERS_QUERY_KEY } from '@/(FSD)/entities/manager/api/useGetAllUsers';
 import useFetchData from '@/(FSD)/shareds/fetch/useFetchData';
@@ -10,8 +13,16 @@ interface LevelUpdate {
 export const useLevelUpdateUser = () => {
     const fetchData = useFetchData();
     const queryClient = useQueryClient();
+    const [isClient, setIsClient] = useState(false);
+
+    // 클라이언트 사이드에서만 실행되도록 하는 useEffect
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
 
     const updateLevel = async ({ userId, newLevel }: LevelUpdate): Promise<void> => {
+        if (!isClient) return; // 클라이언트 사이드가 아니면 실행하지 않음
+
         const response = await fetchData({
             path: `/manager/level/${userId}`,
             method: 'PUT',
@@ -29,6 +40,7 @@ export const useLevelUpdateUser = () => {
 
     return {
         updateLevel: async (levelUpdate: LevelUpdate) => {
+            if (!isClient) return; // 클라이언트 사이드가 아니면 실행하지 않음
             await updateLevel(levelUpdate);
             queryClient.invalidateQueries({ queryKey: [ALL_USERS_QUERY_KEY] });
         },
@@ -36,7 +48,7 @@ export const useLevelUpdateUser = () => {
             useQuery<void, Error>({
                 queryKey: ['level_update', levelUpdate.userId, levelUpdate.newLevel],
                 queryFn: () => updateLevel(levelUpdate),
-                enabled: false,
+                enabled: isClient, // 클라이언트 사이드에서만 쿼리가 실행되도록 설정
             }),
     };
 };
