@@ -25,7 +25,6 @@ const PointAdjustmentModal = ({ isOpen, onClose, onUpdate, user }: PointAdjustme
             const result = await updatePoint({ userId: user.userId, newPoint });
             console.log('Update result:', result);  // 결과 로깅
             alert('적립금이 성공적으로 업데이트되었습니다.');
-            // queryClient.invalidateQueries({ queryKey: [ALL_USERS_QUERY_KEY] });
             onUpdate();
             onClose();
         } catch (error) {
