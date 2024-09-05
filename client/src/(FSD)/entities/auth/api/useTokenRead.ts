@@ -7,7 +7,11 @@ import { useEffect, useState } from "react";
 const tokenReadFetch = async () => {
 
 
-    const accessToken = localStorage.getItem("access_token");
+    let accessToken = null;
+    
+    if (typeof window !== "undefined") {
+        accessToken = localStorage.getItem("access_token");
+    }
 
 
     const response = await fetch(`${apiPath}/api/user/token`, {
