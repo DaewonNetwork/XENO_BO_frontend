@@ -13,8 +13,10 @@ export const usePointUpdateUser = () => {
 
     // 클라이언트 사이드에서만 실행되도록 하는 useEffect
     useEffect(() => {
-        setIsClient(true);
-    }, []);
+      if (typeof window !== 'undefined') {
+          setIsClient(true);
+      }
+  }, []);
 
     const updatePoint = async ({ userId, newPoint }: PointUpdate) => {
         if (!isClient) return null; // 클라이언트 사이드가 아니면 실행하지 않음

@@ -10,7 +10,9 @@ export const useDeleteUser = () => {
 
     // 클라이언트 사이드에서만 실행되도록 하는 useEffect
     useEffect(() => {
-        setIsClient(true);
+        if (typeof window !== 'undefined') {
+            setIsClient(true);
+        }
     }, []);
 
     return useMutation({
