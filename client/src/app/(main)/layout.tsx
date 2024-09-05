@@ -2,6 +2,7 @@ import AppFixedBtmBar from "@/(FSD)/widgets/app/ui/AppFixedBtmBar";
 import AppFixedTopBar from "@/(FSD)/widgets/app/ui/AppFixedTopBar";
 import AppHeader from "@/(FSD)/widgets/app/ui/AppHeader";
 import AppNav from "@/(FSD)/widgets/app/ui/AppNav";
+import AppTitleHeader from "@/(FSD)/widgets/app/ui/AppTitleHeader";
 import { Metadata } from "next";
 import React from "react";
 
@@ -13,7 +14,7 @@ const Layout = ({ children, }: { children: React.ReactNode }) => {
     return (
         <>
             <AppFixedTopBar>
-                <AppHeader />
+                <AppTitleHeader title={"로그인"} />
             </AppFixedTopBar>
             {children}
             <AppFixedBtmBar>

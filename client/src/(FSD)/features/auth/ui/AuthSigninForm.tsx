@@ -45,7 +45,7 @@ const AuthSigninForm = () => {
         localStorage.setItem("access_token", data.accessToken);
         localStorage.setItem("refresh_token", data.refreshToken);
 
-        router.push("/");
+        router.push("/users");
     }
 
     const { mutate, isError, isPending } = useAuthSignin({ onSuccess });
