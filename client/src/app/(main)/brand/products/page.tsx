@@ -1,3 +1,5 @@
+"use client"
+
 import AppInner from "@/(FSD)/widgets/app/ui/AppInner";
 import AppSection from "@/(FSD)/widgets/app/ui/AppSection";
 import styles from '@/(FSD)/shareds/styles/UserList.module.scss';

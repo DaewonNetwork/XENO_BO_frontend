@@ -1,3 +1,5 @@
+"use client"
+
 import AppInner from "@/(FSD)/widgets/app/ui/AppInner";
 import AppSection from "@/(FSD)/widgets/app/ui/AppSection";
 import UserList from "@/(FSD)/entities/manager/ui/UserList";

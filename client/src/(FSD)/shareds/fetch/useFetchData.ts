@@ -9,8 +9,10 @@ const useFetchData = () => {
 
     useEffect(() => {
         // 클라이언트 사이드에서만 실행됨
-        const token = localStorage.getItem("access_token");
-        setAccessToken(token);
+        if (typeof window !== 'undefined') {
+            const token = localStorage.getItem("access_token");
+            setAccessToken(token);
+        }
     }, []);
 
     const fetchData = useCallback(async ({ path, method = "GET", contentType = "application/json", isAuthRequired = false, isNotAuthRequired = false, body }: FetchType) => {
