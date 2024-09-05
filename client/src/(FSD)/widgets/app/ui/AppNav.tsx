@@ -11,9 +11,15 @@ import IconShared from "@/(FSD)/shareds/ui/IconShared";
 const AppNav = () => {
 
 
+    const [accessToken, setAccessToken] = useState<string | null>(null);
 
-
-    const accessToken = localStorage.getItem("access_token");
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            // 클라이언트 사이드에서만 실행됨
+            const token = localStorage.getItem("access_token");
+            setAccessToken(token);
+        }
+    }, []);
 
     return (
         <nav className={`border-default-100 border-t-small ${styles.nav}`}>

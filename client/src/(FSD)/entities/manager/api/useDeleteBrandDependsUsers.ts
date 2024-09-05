@@ -3,10 +3,20 @@
 import useFetchData from "@/(FSD)/shareds/fetch/useFetchData"
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ALL_USERS_QUERY_KEY } from "./useGetAllUsers";
+import { useEffect, useState } from "react";
 
 export const useDeleteDependsUsers = () => {
     const fetchData = useFetchData();
     const queryClient = useQueryClient();
+    const [accessToken, setAccessToken] = useState<string | null>(null);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            // 클라이언트 사이드에서만 실행됨
+            const token = localStorage.getItem("access_token");
+            setAccessToken(token);
+        }
+    }, []);
 
     return useMutation({
         mutationFn: async (userId: number) => {
