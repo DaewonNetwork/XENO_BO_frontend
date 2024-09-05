@@ -1,18 +1,25 @@
-import IconShared from "@/(FSD)/shareds/ui/IconShared";
-import LinkBtnShared from "@/(FSD)/shareds/ui/LinkBtnShared";
 import AppFixedBtmBar from "@/(FSD)/widgets/app/ui/AppFixedBtmBar";
 import AppFixedTopBar from "@/(FSD)/widgets/app/ui/AppFixedTopBar";
+import AppHeader from "@/(FSD)/widgets/app/ui/AppHeader";
 import AppNav from "@/(FSD)/widgets/app/ui/AppNav";
 import AppTitleHeader from "@/(FSD)/widgets/app/ui/AppTitleHeader";
+import { Metadata } from "next";
 import React from "react";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+export const metadata: Metadata = {
+    title: "XENO | manager",
+}
+
+const Layout = ({ children, }: { children: React.ReactNode }) => {
     return (
         <>
             <AppFixedTopBar>
-                <AppTitleHeader title={"판매사 관리"} />
+                <AppTitleHeader title={"유저 관리"} />
             </AppFixedTopBar>
             {children}
+            <AppFixedBtmBar>
+                <AppNav />
+            </AppFixedBtmBar>
         </>
     );
 };
