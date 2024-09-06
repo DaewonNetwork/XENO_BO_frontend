@@ -30,7 +30,7 @@ const AppNav = () => {
                             <IconShared iconType={"cart"} />
                             <TextXSmallShared>상품 리스트</TextXSmallShared>
                         </LinkBtnShared>
-                        <LinkBtnShared href={"/"} data-hover={false} disableAnimation>
+                        <LinkBtnShared href={"/users"} data-hover={false} disableAnimation>
                             <IconShared iconType={"person"} />
                             <TextXSmallShared>유저 관리</TextXSmallShared>
                         </LinkBtnShared>

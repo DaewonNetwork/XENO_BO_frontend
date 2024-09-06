@@ -69,7 +69,19 @@ const UserList = () => {
                             <td>{user.email}</td>
                             <td>{user.name}</td>
                             <td>{user.phoneNumber}</td>
-                            <td>{user.address}</td>
+                            <td>
+                                <h1>
+                                    {(() => {
+                                    try {
+                                        const addressObj = JSON.parse(user.address || '{}');
+                                        return `${addressObj.address || ''} ${addressObj.detailAddress || ''}`;
+                                    } catch (e) {
+                                        // JSON 파싱에 실패한 경우, 원래 문자열을 그대로 반환
+                                        return user.address || '';
+                                    }
+                                    })()}
+                                </h1>
+                            </td>
                             <td>{user.roles.join(', ')}</td>
                             <td>
                                 {user.point || '-'}

@@ -6,6 +6,7 @@ import { ALL_PRODUCTS_QUERY_KEY, useGetAllProducts } from "../api/useGetAllProdu
 import { useDeleteProduct } from "../api/useDeleteProduct";
 import styles from '@/(FSD)/shareds/styles/UserList.module.scss';
 import { ProductInfo } from "@/(FSD)/shareds/types/manager/ProductInfo.type";
+import Link from "next/link";
 
 const ProductsList = () => {
     const queryClient = useQueryClient();
@@ -50,7 +51,16 @@ const ProductsList = () => {
                             <tr>
                                 <td>{product.productId}</td>
                                 <td>{product.brandName}</td>
-                                <td>{product.name}</td>
+                                <td>
+                                    <Link 
+                                        href={`http://www.localhost:3000/products/${product.productId}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles.productLink}
+                                    >
+                                        {product.name}
+                                    </Link>
+                                </td>
                                 <td>{product.category}</td>
                                 <td>{product.price}</td>
                                 <td>{product.priceSale}</td>
