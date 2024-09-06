@@ -56,6 +56,17 @@
         }
       }
 
+      .productLink {
+        color: #0066cc; // 링크 색상
+        text-decoration: underline; // 밑줄
+        cursor: pointer; // 마우스 커서를 포인터로 변경
+    
+        &:hover {
+            color: #004499; // 호버 시 색상 변경
+            text-decoration: none; // 호버 시 밑줄 제거
+        }
+    }
+
       .buttonContainer {
         padding: 16px;
         background-color: white;
