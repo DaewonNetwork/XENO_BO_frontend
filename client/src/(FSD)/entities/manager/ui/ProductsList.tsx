@@ -52,14 +52,14 @@ const ProductsList = () => {
                                 <td>{product.productId}</td>
                                 <td>{product.brandName}</td>
                                 <td>
-                                    <Link 
+                                    <a
                                         href={`localhost:3000/products/${product.productId}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={styles.productLink}
                                     >
                                         {product.name}
-                                    </Link>
+                                    </a>
                                 </td>
                                 <td>{product.category}</td>
                                 <td>{product.price}</td>
