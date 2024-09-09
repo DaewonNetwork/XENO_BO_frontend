@@ -53,7 +53,7 @@ const ProductsList = () => {
                                 <td>{product.brandName}</td>
                                 <td>
                                     <Link
-                                        href={`http://localhost:3000/products/${product.productId}`}
+                                        href={`https://www.fo-xeno.store/products/${product.productId}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={styles.productLink}
